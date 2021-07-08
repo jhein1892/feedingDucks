@@ -1,14 +1,16 @@
 import React from 'react'; 
-import { Button, makeStyles, TextField } from '@material-ui/core'
-
-
+import { Button, makeStyles, TextField, Paper, ImageList } from '@material-ui/core'
+import Duck from '../images/duck2.png'
+import Mountain from '../images/Mountain2.jpeg'
 const useStyles = makeStyles(() => ({
   root:{
     // minHeight:'60vh'
+    backgroundImage:`${Mountain}`
   },
   form:{
     padding:"2%",
-    minHeight:'35vh'
+    minHeight:'35vh',
+    
   },
   input:{
     margin:'1%',
@@ -17,14 +19,22 @@ const useStyles = makeStyles(() => ({
     marginTop:'2%'
   },
   bottomHalf:{
-    minHeight:'20vh',
-    display:'flex',
-    flexDirection:'row',
-    alignItems:'flex-end'
+    background: 'linear-gradient(transparent 42%, #6c6cff 75%)'
+  },
+  topHalf:{
+    // backgroundImage: `src(${Mountain}`
   },
   divider:{
     alignSelf:'bottom',
     width:'100%',
+    margin: '0px'
+  },
+  image:{
+    // backgroundColor:'blue',
+    maxHeight: '150px',
+    maxWidth: '150px',
+  },
+  paperContainer:{
   }
 }))
 
@@ -54,7 +64,12 @@ export default function Top(props){
         </form>
       </div>
       <div className={classes.bottomHalf}>
-        <hr className={classes.divider}></hr>
+        
+        <img className={classes.image} src={Duck}/>
+        <img className={classes.image} src={Duck}/>
+        <img className={classes.image} src={Duck}/>
+        
+        
       </div>
     </div>
   )
