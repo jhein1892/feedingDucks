@@ -1,21 +1,34 @@
 import React from 'react'; 
-import { Button, TextField } from '@material-ui/core'
+import { Button, makeStyles, TextField } from '@material-ui/core'
+
+
+const useStyles = makeStyles(() => ({
+  form:{
+    padding:"2%"
+  },
+  input:{
+    margin:'1%',
+  }
+}))
+
+
 
 export default function Top(props){
+  const classes = useStyles(); 
 
 
   return(
     <div>
       <h1>Hello</h1>
-      <form noValidate autoComplete="off">
+      <form className={classes.form} noValidate autoComplete="off">
         <div>
-          <TextField required label="Where were the Ducks fed?" placeholder="The Moon"/>
-          <TextField required label="What time were they fed?" placeholder="Noon"/>
-          <TextField required label="What type of food?" placeholder="Bread"/>
+          <TextField className={classes.input} required label="Location" placeholder="The Moon"/>
+          <TextField className={classes.input} required label="Time" placeholder="Noon"/>
+          <TextField className={classes.input} required label="Type of Food" placeholder="Bread"/>
         </div>
         <div>
-        <TextField required label="How many were fed?" placeholder="1"/>
-        <TextField required label="How much did you feed them?" placeholder="1 piece"/>
+        <TextField className={classes.input} required label="Number Fed" placeholder="1"/>
+        <TextField className={classes.input} required label="Amount of Food" placeholder="1 piece"/>
         </div>
       </form>
       <Button variant="contained" color="primary">
