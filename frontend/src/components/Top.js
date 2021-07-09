@@ -1,11 +1,11 @@
-import React from 'react'; 
-import { Button, makeStyles, TextField, Paper, ImageList } from '@material-ui/core'
+import React, { useState } from 'react'; 
+import { Button, makeStyles, TextField } from '@material-ui/core'
 import Duck from '../images/duck2.png'
-import Mountain from '../images/Mountain2.jpeg'
+
 const useStyles = makeStyles(() => ({
   root:{
     // minHeight:'60vh'
-    backgroundImage:`${Mountain}`
+    
   },
   form:{
     padding:"2%",
@@ -42,7 +42,24 @@ const useStyles = makeStyles(() => ({
 
 export default function Top(props){
   const classes = useStyles(); 
+  const [location, setLocation] = useState()
+  const [time, setTime] = useState()
+  const [food, setFood] = useState() 
+  const [numberFed, setNumberFed] = useState()
+  const [amountFed, setAmountFed] = useState() 
 
+  function save() {
+
+    let myFeeding = {
+      myLocation: location,
+      myTime: time,
+      myFood: food, 
+      myNumberFed: numberFed,
+      myAmountFed: amountFed
+    };
+
+    console.log("am i here?", myFeeding)
+  }
 
   return(
     <div className={classes.root}>
@@ -50,15 +67,60 @@ export default function Top(props){
       <div>
         <form className={classes.form} noValidate autoComplete="off">
           <div>
-            <TextField className={classes.input} required label="Location" placeholder="The Moon"/>
-            <TextField className={classes.input} required label="Time" placeholder="Noon"/>
-            <TextField className={classes.input} required label="Type of Food" placeholder="Bread"/>
+            <TextField 
+              required={true}
+              variant='outlined'
+              className={classes.input} 
+              id="location"
+              label="Location" 
+              value={location}
+              onChange={(event) => setLocation(event.target.value)}
+            />
+            <TextField 
+              required={true}
+              variant='outlined' 
+              className={classes.input} 
+              id='time'
+              label="Time" 
+              value={time}
+              onChange={(event) => setTime(event.target.value)}
+            />
+            <TextField 
+              required={true}
+              variant='outlined' 
+              className={classes.input} 
+              id='food'
+              label="Type of Food" 
+              value={food}
+              onChange={(event) => setFood(event.target.value)}
+            />
           </div>
           <div>
-          <TextField className={classes.input} required label="Number Fed" placeholder="1"/>
-          <TextField className={classes.input} required label="Amount of Food" placeholder="1 piece"/>
+            <TextField 
+                required={true}
+                variant='outlined' 
+                className={classes.input} 
+                id='number'
+                label="Number Fed" 
+                value={numberFed}
+                onChange={(event) => setNumberFed(event.target.value)}
+              />
+            <TextField 
+                required={true}
+                variant='outlined' 
+                className={classes.input} 
+                id='amount'
+                label='Amount of Food' 
+                value={amountFed}
+                onChange={(event) => setAmountFed(event.target.value)}
+              />
           </div>
-        <Button className={classes.submit} variant="contained" color="primary">
+        <Button 
+          className={classes.submit} 
+          variant="contained" 
+          color="primary"
+          onClick={() => save()}
+        >
           Submit
         </Button>
         </form>
