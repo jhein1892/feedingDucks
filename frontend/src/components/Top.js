@@ -41,12 +41,12 @@ const useStyles = makeStyles(() => ({
 
 
 export default function Top(props){
-  const classes = useStyles(); 
-  const [location, setLocation] = useState()
-  const [time, setTime] = useState()
-  const [food, setFood] = useState() 
-  const [numberFed, setNumberFed] = useState()
-  const [amountFed, setAmountFed] = useState() 
+  const classes = useStyles(''); 
+  const [location, setLocation] = useState('');
+  const [time, setTime] = useState('');
+  const [food, setFood] = useState(''); 
+  const [numberFed, setNumberFed] = useState('');
+  const [amountFed, setAmountFed] = useState(''); 
 
   function save() {
 
@@ -57,8 +57,9 @@ export default function Top(props){
       myNumberFed: numberFed,
       myAmountFed: amountFed
     };
-
-    console.log("am i here?", myFeeding)
+    
+    // console.log("am i here?", myFeeding)
+    props.logFeeding(myFeeding)
   }
 
   return(
