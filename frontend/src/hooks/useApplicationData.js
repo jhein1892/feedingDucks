@@ -14,10 +14,11 @@ export function useApplicationData() {
       console.log('all info', all[0].data)
       setState(all[0].data)
     })
-  },[])
+  },[state])
 
   function logFeeding(myFeeding) {
     console.log('in application data', myFeeding)
+    state.push(myFeeding)
     return axios.post(`/api/feedings/`, { myFeeding })
   }
 

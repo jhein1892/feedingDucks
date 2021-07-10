@@ -58,7 +58,7 @@ export default function Top(props){
       myAmountFed: amountFed
     };
     
-    // console.log("am i here?", myFeeding)
+    // Sends info to DB
     props.logFeeding(myFeeding)
   }
 

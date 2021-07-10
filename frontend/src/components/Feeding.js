@@ -24,8 +24,8 @@ export default function Feeding(props){
       <p className={classes.row}>{location}</p>
       <p className={classes.row}>{time}</p>
       <p className={classes.row}>{type_of_food}</p>
-      <p className={classes.row}>{amount_fed}</p>
       <p className={classes.row}>{number_fed}</p>
+      <p className={classes.row}>{amount_fed}</p>
     </div>
   )
 }
