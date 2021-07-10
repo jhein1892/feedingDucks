@@ -80,7 +80,7 @@ export default function Bottom(props){
         <Button
           variant='contained'
           color='secondary'
-          style={{marginBottom: '1%'}}
+          style={{marginBottom: '1%', marginTop: '1%'}}
           onClick={() => setLocked(true)}
         >
           Close Table
