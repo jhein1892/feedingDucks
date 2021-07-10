@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className={classes.root}>
-      <h1>Feeding the Ducks</h1>
+      <h1>Who the Duck has been feeding my Birds?</h1>
       <Top
         logFeeding={logFeeding}
       />
