@@ -1,12 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const {
-  addFeeding
+  addFeeding,
+  getAllFeedings
 } = require('../queries/feedings-queries')
 // get /feedings
 router.get('/', (req, res) => {
-  console.log('in get')
-})
+  getAllFeedings()
+    .then((response) => {
+      res.json(response)
+    });
+});
 
 
 

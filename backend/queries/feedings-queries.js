@@ -3,7 +3,15 @@ const client = require('../elephantsql');
 
 
 // queries for all previous feedings
+const getAllFeedings = () => {
 
+  return client.query(`
+  SELECT * FROM feedings
+  `)
+  .then((response) => {
+    return response.rows
+  })
+}
 
 
 // adds in a new feeding
@@ -25,5 +33,6 @@ const addFeeding = (feedingInfo) => {
 // Deletes a feeding
 
 module.exports = {
-  addFeeding
+  addFeeding,
+  getAllFeedings
 }
