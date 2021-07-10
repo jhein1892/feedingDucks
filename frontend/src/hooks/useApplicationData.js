@@ -10,19 +10,16 @@ export function useApplicationData() {
     Promise.all([
       axios.get(`api/feedings/`)
     ]).then((all) => {
-
-      // This provides an array of all the data in our DB
       setState(all[0].data)
     })
   },[state])
 
+
+  // Adding New feedings to DB
   function logFeeding(myFeeding) {
-    console.log('in application data', myFeeding)
-    
     // This gets us an update from the useEffect
     state.push(myFeeding)
-
-    // But we are still pushing the info to the DB
+    
     return axios.post(`/api/feedings/`, { myFeeding })
   }
 

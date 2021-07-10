@@ -74,6 +74,7 @@ export default function Bottom(props){
           <p className={classes.row}>Type of Food</p>
           <p className={classes.row}># of Ducks Fed</p>
           <p className={classes.row}>Amount of Food / Duck</p>
+          <p className={classes.row}></p>
         </div>
         <hr/>
         {feedingInstances}
