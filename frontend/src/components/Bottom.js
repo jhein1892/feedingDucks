@@ -20,7 +20,8 @@ const useStyles = makeStyles(() => ({
   },
   row:{
     maxWidth:'15vw',
-    minWidth:'15vw'
+    minWidth:'15vw',
+    fontWeight:'bolder'
   },
   locked:{
     minHeight:'30vh',
@@ -76,6 +77,14 @@ export default function Bottom(props){
         </div>
         <hr/>
         {feedingInstances}
+        <Button
+          variant='contained'
+          color='secondary'
+          style={{marginBottom: '1%'}}
+          onClick={() => setLocked(true)}
+        >
+          Close Table
+        </Button>
       </div>
       }{locked &&
         <div className={classes.locked}>
