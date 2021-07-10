@@ -1,5 +1,5 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core'
+import React, { useState } from 'react'
+import { makeStyles, Button } from '@material-ui/core'
 import Feeding from './Feeding.js'
 const useStyles = makeStyles(() => ({
   root:{
@@ -21,6 +21,24 @@ const useStyles = makeStyles(() => ({
   row:{
     maxWidth:'15vw',
     minWidth:'15vw'
+  },
+  locked:{
+    minHeight:'30vh',
+    display:'flex',
+    flexDirection:'column',
+    justifyContent:'center'
+  },
+  lockButton:{
+    maxWidth:'30vw',
+    alignSelf:'center',
+    marginTop:'-10%',
+    background:'white',
+    boxShadow:'0px 0px 19px 5px #1724b3',
+    '&:hover':{
+    background:'#335cd4e8',
+    color:'white',
+    boxShadow:'0px 0px 19px 5px #1724b3'
+    }
   }
 }))
 
@@ -28,6 +46,7 @@ const useStyles = makeStyles(() => ({
 export default function Bottom(props){
   const { state } = props
   const classes = useStyles('');
+  const [locked, setLocked] = useState(true)
   const feedingInstances = state.map((e) => {
       return (
         <Feeding
@@ -46,6 +65,7 @@ export default function Bottom(props){
 
   return (
     <div className={classes.root}>
+      {!locked && 
       <div className={classes.table}>
         <div className={classes.header}>
           <p className={classes.row}>Location</p>
@@ -57,6 +77,16 @@ export default function Bottom(props){
         <hr/>
         {feedingInstances}
       </div>
+      }{locked &&
+        <div className={classes.locked}>
+          <Button
+            className={classes.lockButton}
+            variant='outlined'
+            onClick={() => setLocked(false)}>
+            Check out the Data
+          </Button>
+        </div>
+      }
     </div>
   )
 }

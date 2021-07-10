@@ -31,7 +31,6 @@ export function useApplicationData() {
 
 // Am able to get the info from the form to Applicaiton Data. 
 // Next Steps: 
-// 1) Set up backend API Routes, writing routes and DB queries.
-
-// 3) Set up useEffect on load that pulls all info from the DB
-// 4) Put the info on the bottom half of the screen
+// 1) Make bottom half blurred until button clicked
+// 2) Allow for update/delete of the information (maybe)
+// 
