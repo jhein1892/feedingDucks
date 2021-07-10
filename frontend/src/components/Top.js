@@ -64,7 +64,7 @@ export default function Top(props){
 
   return(
     <div className={classes.root}>
-      <h1>Hello</h1>
+      {/* <h1>Hello</h1> */}
       <div>
         <form className={classes.form} noValidate autoComplete="off">
           <div>
