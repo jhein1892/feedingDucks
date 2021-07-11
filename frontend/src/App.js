@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className={classes.root}>
-      <h1>Who the Duck has been feeding my Birds?</h1>
+      <h1>Who The Duck Has Been Feeding My Birds?</h1>
       <Top
         logFeeding={logFeeding}
       />
