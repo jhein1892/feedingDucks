@@ -16,10 +16,7 @@ const feedingRoutes = require('./routes/feedings');
 
 App.use('/api/feedings', feedingRoutes);
 
-// Sample GET route
-// App.get('/api/data', (req, res) => res.json({
-//   message: "Seems to work!",
-// }));
+
 
 App.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/../frontend/build/index.html'))
