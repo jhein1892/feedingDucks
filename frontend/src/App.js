@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
 import Top from './components/Top'
 import Bottom from './components/Bottom'
 import { makeStyles } from '@material-ui/core'

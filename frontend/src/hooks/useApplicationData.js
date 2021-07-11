@@ -23,7 +23,6 @@ export function useApplicationData() {
   }
 
   function deleteRow(id) {
-    console.log('in uad', id)
     return axios.delete( `/api/feedings/${id}`)
   }
 
@@ -35,8 +34,3 @@ export function useApplicationData() {
 
 }
 
-
-// Am able to get the info from the form to Applicaiton Data. 
-// Next Steps: 
-// 1) Allow for update/delete of the information (maybe)
-// 2) Allow for a click on the columns for the data sorted by that. I think this is definitely extra though. Probably won't have time to get that done. 

@@ -53,12 +53,9 @@ export default function Bottom(props){
         deleteRow(id)
       }
 
-      let feedNumber = e.id
       return (
         <Feeding
-          // key = {e.id}
-          id = {e.id}
-          feedNumber = {feedNumber}
+          key = {e.id}
           location = {e.location}
           amount_fed = {e.amount_fed}
           number_fed = {e.number_fed}

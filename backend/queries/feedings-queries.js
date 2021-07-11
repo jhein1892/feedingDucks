@@ -1,4 +1,4 @@
-const { response } = require('express');
+// const { response } = require('express');
 const client = require('../elephantsql');
 
 
@@ -28,7 +28,6 @@ const addFeeding = (feedingInfo) => {
 
 // Deletes a feeding
 const deleteFeeding = (id) => {
-  console.log('id', id)
   return client.query(`
     DELETE FROM feedings
     WHERE id = $1;
@@ -38,7 +37,6 @@ const deleteFeeding = (id) => {
     })
 }
 
-// Updates an existing feeding
 
 
 

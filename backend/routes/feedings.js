@@ -5,6 +5,7 @@ const {
   getAllFeedings,
   deleteFeeding
 } = require('../queries/feedings-queries')
+
 // get /feedings
 router.get('/', (req, res) => {
   getAllFeedings()
@@ -13,12 +14,8 @@ router.get('/', (req, res) => {
     });
 });
 
-
-
-
 // post /feedings
 router.post('/', (req, res) => {
-  // console.log('req', req.body.myFeeding)
   addFeeding(req.body.myFeeding)
   .then((response) => {
     const feeding = {
@@ -37,6 +34,8 @@ router.post('/', (req, res) => {
   });
 });
 
+
+// delete /feedings
 router.delete(`/:id`, (req, res) => {
   deleteFeeding(req.params.id)
   .then((data) => {
@@ -48,14 +47,5 @@ router.delete(`/:id`, (req, res) => {
 
 })
 
-
-
-// update /feedings
-
-
-
-
-
-// delete /feedings
 
 module.exports = router;

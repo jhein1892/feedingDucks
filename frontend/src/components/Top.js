@@ -4,13 +4,11 @@ import Duck from '../images/duck2.png'
 
 const useStyles = makeStyles(() => ({
   root:{
-    // minHeight:'60vh'
-    
+    // Keeping this just in case we need to inplement something on entire component
   },
   form:{
     padding:"2%",
     minHeight:'35vh',
-    
   },
   input:{
     margin:'1%',
@@ -21,21 +19,10 @@ const useStyles = makeStyles(() => ({
   bottomHalf:{
     background: 'linear-gradient(transparent 42%, #6c6cff 75%)'
   },
-  topHalf:{
-    // backgroundImage: `src(${Mountain}`
-  },
-  divider:{
-    alignSelf:'bottom',
-    width:'100%',
-    margin: '0px'
-  },
   image:{
-    // backgroundColor:'blue',
     maxHeight: '150px',
     maxWidth: '150px',
   },
-  paperContainer:{
-  }
 }))
 
 
@@ -48,6 +35,14 @@ export default function Top(props){
   const [numberFed, setNumberFed] = useState('');
   const [amountFed, setAmountFed] = useState(''); 
 
+  function clean() {
+    setLocation('')
+    setTime('')
+    setFood('')
+    setNumberFed('')
+    setAmountFed('')
+  }
+  
   function save() {
 
     let myFeeding = {
@@ -60,11 +55,11 @@ export default function Top(props){
     
     // Sends info to DB
     props.logFeeding(myFeeding)
+    clean()
   }
 
   return(
     <div className={classes.root}>
-      {/* <h1>Hello</h1> */}
       <div>
         <form className={classes.form} noValidate autoComplete="off">
           <div>
@@ -127,12 +122,9 @@ export default function Top(props){
         </form>
       </div>
       <div className={classes.bottomHalf}>
-        
-        <img className={classes.image} src={Duck}/>
-        <img className={classes.image} src={Duck}/>
-        <img className={classes.image} src={Duck}/>
-        
-        
+        <img className={classes.image} src={Duck} alt='Duck1'/>
+        <img className={classes.image} src={Duck} alt='Duck2'/>
+        <img className={classes.image} src={Duck} alt='Duck3'/>
       </div>
     </div>
   )

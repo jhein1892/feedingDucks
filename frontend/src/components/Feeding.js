@@ -1,6 +1,5 @@
 import React from 'react'
 import { makeStyles, Button } from '@material-ui/core'
-// import { delete } from '../../../backend/routes/feedings';
 
 const useStyles = makeStyles (() => ({
   root:{
@@ -29,12 +28,7 @@ const useStyles = makeStyles (() => ({
 export default function Feeding(props){
   
   const classes = useStyles('');
-  const { location, amount_fed, number_fed, type_of_food, time, feedNumber } = props
-  // const deleteFeeding = function() {
-  //   console.log('ID', props.id)
-  //   console.log('Feednumber', feedNumber)
-  //   props.deleteRow(feedNumber)
-  // }
+  const { location, amount_fed, number_fed, type_of_food, time } = props
   return (
     <div className={classes.root}>
       <p className={classes.row}>{location}</p>
@@ -48,7 +42,6 @@ export default function Feeding(props){
         color='secondary'
         onClick={() => props.deleteRow()}
         >
-
         DELETE
       </Button>
     </div>
