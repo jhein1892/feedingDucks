@@ -1,6 +1,5 @@
 # feedingDucks
 
-## To Start Application
-1) cd into both frontend and backend
-2) npm i (in both folders)
-3) npm start in backend, then npm start in frontend.
+## Setup for Local Running & Testing
+1. `npm i` in both the frontend and backend directories
+2. `npm start` in the backend to run the server, then the frontend to start the react app
