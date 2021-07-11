@@ -45,18 +45,26 @@ const useStyles = makeStyles(() => ({
 
 
 export default function Bottom(props){
-  const { state } = props
+  const { state, deleteRow } = props
   const classes = useStyles('');
   const [locked, setLocked] = useState(true)
   const feedingInstances = state.map((e) => {
+      let deleteFeeding = function(id) {
+        deleteRow(id)
+      }
+
+      let feedNumber = e.id
       return (
         <Feeding
+          // key = {e.id}
           id = {e.id}
+          feedNumber = {feedNumber}
           location = {e.location}
           amount_fed = {e.amount_fed}
           number_fed = {e.number_fed}
           type_of_food = {e.type_of_food}
-          time = {e.time}       
+          time = {e.time}
+          deleteRow = {() => deleteFeeding(e.id)}       
         />
       );
     })

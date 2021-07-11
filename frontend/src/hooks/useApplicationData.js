@@ -19,13 +19,18 @@ export function useApplicationData() {
   function logFeeding(myFeeding) {
     // This gets us an update from the useEffect
     state.push(myFeeding)
-    
     return axios.post(`/api/feedings/`, { myFeeding })
+  }
+
+  function deleteRow(id) {
+    console.log('in uad', id)
+    return axios.delete( `/api/feedings/${id}`)
   }
 
   return {
     state,
-    logFeeding
+    logFeeding,
+    deleteRow
   }
 
 }

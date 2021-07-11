@@ -16,7 +16,8 @@ function App() {
   const classes = useStyles('');
   const {
     state,
-    logFeeding
+    logFeeding,
+    deleteRow
   } = useApplicationData(); 
 
   return (
@@ -27,6 +28,7 @@ function App() {
       />
       <Bottom
         state={state}
+        deleteRow={deleteRow}
       />
     </div>
   );
