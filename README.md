@@ -7,12 +7,12 @@
 
 ## Dependencies
 
-###Frontend
-*@material-ui/core
-*axios
-*react
-*react-dom
-*react-scripts
+### Frontend
+* @material-ui/core
+* axios
+* react
+* react-dom
+* react-scripts
 
 
 ### Backend
