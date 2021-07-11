@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const {
   addFeeding,
-  getAllFeedings
+  getAllFeedings,
+  deleteFeeding
 } = require('../queries/feedings-queries')
 // get /feedings
 router.get('/', (req, res) => {
@@ -30,12 +31,22 @@ router.post('/', (req, res) => {
       amount_fed: response.amount_fed,
     }
     res.send(feeding);
-    console.log('feeding', feeding)
   })
   .catch(e => {
     res.send(e);
   });
 });
+
+router.delete(`/:id`, (req, res) => {
+  deleteFeeding(req.params.id)
+  .then((data) => {
+    res.send(data)
+  })
+  .catch(e => {
+    res.send(e)
+  })
+
+})
 
 
 
