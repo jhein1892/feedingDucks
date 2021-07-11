@@ -14,5 +14,8 @@
 * react-dom
 * react-scripts
 
-
 ### Backend
+* body-parser
+* dotenv
+* express
+* pg
